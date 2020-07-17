@@ -1,0 +1,51 @@
+
+
+  <div class="row" *ngIf="!updateSelected">
+    <div class="col s12 ">
+      <div class="card-panel ">
+        <form (submit)="onNicSubmit()" >
+            <div class="input-field">
+              <input  type="text" placeholder="Enter the NIC" [(ngModel)]="nic" name="nic">
+              <button class="btn waves-effect waves-light" type="submit" name="action" value="submit">Submit
+                <i class="material-icons right">send</i>
+              </button>
+              
+            </div>
+          </form>
+      </div>
+    </div>
+</div>
+
+<div class="row"  *ngIf="user">
+    <div class="card ">
+      <div class="col s4">
+        <img [src]="convertedImage" alt="No Profile image" width="200" height="200" class="circle">
+
+      </div>
+      <div class="col s8">
+         <div class="row">
+          <H6>First Name  :{{user.fname}}</H6>
+          <H6>Last Name   :{{user.lname}}</H6>
+          <H6>NIC no      :{{user.nic}}</H6>
+          <H6>Email       :{{user.email}}</H6>
+          <H6>Telephone number:{{user.phone_number}}</H6>
+          
+        </div>
+        
+          
+      </div>
+      <div class="row" >
+        <a class="waves-effect red lighten-1 btn-small col s2 m2" style="margin:20px" (click)="onDelete(user.id)">Delete</a>
+        <a class="waves-effect waves-light #1565c0 blue darken-3 btn-small col s2 m2" style="margin:20px" (click)="onUpdate(user.id)">Update</a>
+      
+       </div>
+    </div>
+  </div>
+
+ 
+
+     
+             
+    
+
+  
